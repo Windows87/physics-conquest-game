@@ -1,0 +1,29 @@
+{
+  "name": "physics-conquest-game",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Windows87/physics-conquest-game.git"
+  },
+  "keywords": [],
+  "author": "Yuri Faria",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Windows87/physics-conquest-game/issues"
+  },
+  "homepage": "https://github.com/Windows87/physics-conquest-game#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "ip": "^1.1.5",
+    "nedb": "^1.8.0",
+    "socket.io": "^2.3.0"
+  }
+}

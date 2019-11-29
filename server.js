@@ -4,6 +4,7 @@ const socketIo = require('socket.io');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const ip = require('ip');
+const path = require('path');
 const routes = require('./app/routes/');
 const Question = require('./app/models/Question.js');
 
@@ -17,7 +18,9 @@ app.use(cors());
 app.use(express.static(__dirname + '/public'));
 
 app.use('/api', routes);
-app.get('/game', (req, res) => res.redirect('/'));
+app.get('*', (req, res) => {
+  res.sendFile(path.resolve(__dirname, 'public', 'index.html'));
+});
 
 app.listen(80, err => {
   if(err)

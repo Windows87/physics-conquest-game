@@ -1,0 +1,39 @@
+.start {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #1565c0;
+}
+
+.start form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  max-width: 400px;
+}
+
+.start form input {
+  margin: 6px;
+  border: 0;
+  width: 100%;
+  height: 35px;
+  font-size: 18px;
+  font-family: Montserrat;
+  background-color: white;
+  color: gray;
+  border-radius: 6px;
+}
+
+.start form input[type="text"] {
+  padding-left: 4px;
+}
+
+.start form input[type="submit"] {
+  color: white;
+  width: 80%;
+  background-color: #0c4280;
+}

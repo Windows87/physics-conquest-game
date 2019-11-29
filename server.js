@@ -31,8 +31,8 @@ server.listen(8080, err => {
   	return console.log('\x1b[31m', 'Erro ao Iniciar o Servidor Socket');
 });
 
-const players = [];
-const isGameStarted = false;
+let players = [];
+let isGameStarted = false;
 let questions = [];
 
 function getAllQuestions() {
@@ -80,20 +80,29 @@ function removePointToPlayer(playerId, questionId) {
 }
 
 function getPlayersTop() {
-  return players.sort((a, b) => a.points > b.points);
+  return players.sort((a, b) => a.points < b.points);
 }
 
 function sendMessageToAllPlayers(name, content) {
   players.forEach(player => io.sockets.connected[player.id].emit(name, content));
 }
 
+function getPlayer(id) {
+  let player;
+
+  players.forEach(playerEach => {
+    if(playerEach.id === id)
+      player = playerEach;
+  });
+
+  return player;
+}
+
 io.on('connection', socket => {
   socket.on('enter-game', async username => {
   	if(isGameStarted)
-  	  return socket.emit('error', 'O Jogo já Começou');
-
+  	  return socket.emit('enter-error', 'O Jogo já Começou');
   	players.push({ id: socket.id, username, points: 0, answered: [] });
-  	socket.emit('enter-game-successfull', true);
   });
 
   socket.on('start-game', async () => {
@@ -115,6 +124,12 @@ io.on('connection', socket => {
   	else
   	  removePointToPlayer(socket.id, questionId);
 
-  	socket.emit('on-answer', { isCorrectAnswer, questionId, players });
+    const player = getPlayer(socket.id);
+
+  	socket.emit('on-answer', { isCorrectAnswer, questionId, players, player });
+  });
+
+  socket.on('disconnect', () => {
+    players = players.filter(player => player.id !== socket.id);
   });
 });

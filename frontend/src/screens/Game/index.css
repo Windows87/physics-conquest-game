@@ -1,0 +1,104 @@
+.game {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #1565c0;
+}
+
+.game h1 {
+  color: white;
+  font-size: 22px;
+  margin: 8px;
+  text-align: center;
+}
+
+.question {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: 0.5s background-color;
+}
+
+.question h2 {
+  color: white;
+  margin: 8px;
+  text-align: center;
+}
+
+.question button {
+  border: 0;
+  border-radius: 12px;
+  font-size: 18px;
+  height: 35px;
+  width: 80%;
+  margin: 6px;
+  color: white;
+  font-family: Montserrat;
+  filter: brightness(90%);
+  transition: 0.5s all;
+}
+
+.question button:hover {
+  filter:  brightness(85%);
+}
+
+.slick-slider {
+  height: 100%;
+  width: 100%;
+}
+
+.slick-slider div {
+  height: 100%;
+  width: 100% !important;
+}
+
+.gameComponent {
+  height: 100%;
+  width: 100%;
+}
+
+.gameComponent header {
+  position: fixed;
+  top: 8px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: calc(100% - 16px);
+  padding: 8px;
+  z-index: 1;
+}
+
+.top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.top h1, .top h2, .top h3 {
+  color: white;
+  margin-top: 0;
+  text-align: center;
+}
+
+.top h1 {
+  font-size: 42px;
+}
+
+.top h2 {
+  font-size: 32px;
+}
+
+.top h3 {
+  font-size: 22px;
+}
+
+.top-icon {
+  color: white;
+}

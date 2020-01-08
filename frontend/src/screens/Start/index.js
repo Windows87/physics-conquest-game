@@ -24,8 +24,8 @@ class Start extends Component {
   	return (
   	  <div className="start">
   	    <form onSubmit={onFormSumit}>
-  	      <input type="text" placeholder="Nome" value={username} onChange={onNameChange} required />
-  	      <input type="submit" value="Entrar" />
+  	      <input type="text" placeholder="Name" value={username} onChange={onNameChange} required />
+  	      <input type="submit" value="Enter" />
   	    </form>
   	  </div>
   	);

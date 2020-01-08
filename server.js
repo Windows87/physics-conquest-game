@@ -24,14 +24,14 @@ app.get('*', (req, res) => {
 
 app.listen(80, err => {
   if(err)
-  	return console.log('\x1b[31m', 'Erro ao Iniciar o Servidor');
+  	return console.log('\x1b[31m', 'Error on start Server');
 
-  console.log('\x1b[32m', `Servidor Iniciado no IP ${myIp}`);
+  console.log('\x1b[32m', `Server Running in ${myIp}`);
 });
 
 server.listen(8080, err => {
   if(err)
-  	return console.log('\x1b[31m', 'Erro ao Iniciar o Servidor Socket');
+  	return console.log('\x1b[31m', 'Error on start Socket');
 });
 
 let players = [];
@@ -83,7 +83,7 @@ function removePointToPlayer(playerId, questionId) {
 }
 
 function getPlayersTop() {
-  return players.sort((a, b) => a.points < b.points);
+  return players.sort().reverse();
 }
 
 function sendMessageToAllPlayers(name, content) {
@@ -104,7 +104,7 @@ function getPlayer(id) {
 io.on('connection', socket => {
   socket.on('enter-game', async username => {
   	if(isGameStarted)
-  	  return socket.emit('enter-error', 'O Jogo já Começou');
+  	  return socket.emit('enter-error', 'The Game is already Running');
   	players.push({ id: socket.id, username, points: 0, answered: [] });
   });
 

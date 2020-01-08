@@ -18,8 +18,8 @@ class Admin extends Component {
 
   	return (
   	  <div>
-  	    <button onClick={startGame}>Iniciar Jogo</button>
-  	    <button onClick={finishGame}>Terminar Jogo</button>
+  	    <button onClick={startGame}>Start Game</button>
+  	    <button onClick={finishGame}>Finish Game</button>
   	  </div>
   	);
   }

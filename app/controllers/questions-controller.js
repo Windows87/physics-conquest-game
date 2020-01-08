@@ -28,7 +28,7 @@ questionsController.get = async (req, res) => {
   	const questions = await getAllQuestions();
   	res.json({ questions });
   } catch(err) {
-  	return console.log('\x1b[31m', err.message);
+  	console.log('\x1b[31m', err.message);
   	res.status(500).json({ message: 'Error on Get Question' });
   }
 }
@@ -40,7 +40,7 @@ questionsController.getUnique = async (req, res) => {
     const question = await getQuestion(_id);
     res.json({ question });
   } catch(err) {
-    return console.log('\x1b[31m', err.message);
+    console.log('\x1b[31m', err.message);
     res.status(500).json({ message: 'Error on Get Question' });
   }
 }
@@ -53,7 +53,7 @@ questionsController.post = async (req, res) => {
   	await Question.insert({ title, answers, correct_answer, created_date });
   	res.json({ success: true });
   } catch(err) {
-  	return console.log('\x1b[31m', err.message);
+  	console.log('\x1b[31m', err.message);
   	res.status(500).json({ message: 'Error on Insert Question' });
   }
 }
@@ -65,7 +65,7 @@ questionsController.delete = async (req, res) => {
     await Question.remove({ _id });
     res.json({ success: true });
   } catch(err) {
-    return console.log('\x1b[31m', err.message);
+    console.log('\x1b[31m', err.message);
     res.status(500).json({ message: 'Error on Delete Question' });
   }
 }

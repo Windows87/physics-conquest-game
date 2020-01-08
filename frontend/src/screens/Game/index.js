@@ -91,9 +91,9 @@ class Game extends Component {
 
   	return (
   	  <div className="game">
-  	    { waitingStart ? <h1>Esperando o Jogo Iniciar..</h1> : null }
+  	    { waitingStart ? <h1>Waiting Game..</h1> : null }
   	    { error ? <h1>{error}</h1> : null }
-  	    { alreadyStarted ? <h1>O Jogo já Começou</h1> : null }
+  	    { alreadyStarted ? <h1>The Game is already Running</h1> : null }
   	    { !waitingStart && !error && !alreadyStarted && !playersTop.length ? <GameComponent questions={questions} player={player} onAnswerQuestion={answerQuestion} /> : null }
   	    { playersTop.length ? <Top playersTop={playersTop} /> : null }
   	  </div>

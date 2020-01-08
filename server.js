@@ -83,7 +83,7 @@ function removePointToPlayer(playerId, questionId) {
 }
 
 function getPlayersTop() {
-  return players.sort().reverse();
+  return players.sort((a, b) => a.points > b.points);
 }
 
 function sendMessageToAllPlayers(name, content) {

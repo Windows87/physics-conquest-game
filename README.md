@@ -9,6 +9,10 @@ This is a Multiplayer Quiz Game about Physics. But, how works?
 5. The Administrator finishes the Game
 
 ## :camera: Printscreens
+<img src="https://raw.githubusercontent.com/Windows87/physics-conquest-game/master/printscreens/ps1.png">
+<img src="https://raw.githubusercontent.com/Windows87/physics-conquest-game/master/printscreens/ps2.png">
+<img src="https://raw.githubusercontent.com/Windows87/physics-conquest-game/master/printscreens/ps4.png">
+<img src="https://raw.githubusercontent.com/Windows87/physics-conquest-game/master/printscreens/ps3.png">
 
 ## :wrench: How to Play
 1. Clone the Github Repository: ``` git clone https://github.com/Windows87/physics-conquest-game ```
